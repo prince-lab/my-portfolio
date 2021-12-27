@@ -1,0 +1,322 @@
+*{
+	/*padding: auto;*/
+	margin: 0;
+	
+}
+nav {
+	background: black;
+	position: fixed;
+	width: 100vw;
+
+}
+li {
+	/*float:left;*/
+	color: white;
+	display: inline-block;
+	padding: 20px;
+}
+nav li a{
+	text-decoration: none;
+	color: white;
+}
+#logo{
+	height: 30px;
+	width: 30px;
+	margin-right: 30px;
+	position: relative;
+	left: 20px;
+	top:5px;
+}
+#bugger{
+	position: absolute;
+	top: 200px;
+}
+#bug{
+	position: absolute;
+	cursor: pointer;
+}
+#bug div{
+	
+	height: 3px;
+	width: 30px;
+	background: green;
+	position: relative;
+	
+}
+#bug::after{
+	content:" ";
+	height: 3px;
+	width: 30px;
+	background: green;
+	position: absolute;
+	top:10px;
+}
+#bug::before{
+	content:" ";
+	height: 3px;
+	width: 30px;
+	background: green;
+	position: absolute;
+	top: 20px;
+	
+}
+/*........home section..........*/
+#home{
+	height: 100vh;
+	opacity: 6;
+	background-image:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("bg.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #fff;
+
+	/*background: black;*/
+
+}
+center{
+	padding-top: 25vh;
+}
+center #welcome{
+	font-size: 5em;
+	border: 5px solid #ffffff;
+	width: 60%;
+	margin-top: 90px;
+	border-top-color: #e17e03;
+	border-left-color: #e17e03;
+	/*text-rendering: 90;*/
+}
+#touch{
+	height: auto;
+	width: 6.4em;
+	background: #e17e03;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top:4em;,
+	font-size: 3em;
+	box-shadow: 1px 2px 5px rgba(255,255,255,1.0),-1px -2px-5px rgba(255,255,255,1.0);
+	border: 3px solid #fff;
+
+	text-shadow: 1px 2px 5px rgba(255,255,255,1.0),-1px -2px-5px rgba(255,255,255,1.0);
+}
+/*...........about us section.............*/
+#about{
+	height: 90vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+}
+#about img{
+	height: 50vh;
+	width: 50%;
+}
+#about div #texts {
+	text-align: center;
+	font-size: 1.2em;
+	justify-content: center;
+	text-align: center;
+	padding: 15px;
+
+}
+#serviceh::before{
+	content: " ";
+	height: 200px;
+	width: 50px;
+	background: red;
+}
+/*........service section.................*/
+.shead{
+	text-align: center;
+	font-size: 3em;
+}
+
+#service{
+	height: 80vh;
+	width: 100vw;
+	display: flex;
+	align-self: stretch;
+	justify-content: space-around;
+
+}
+.service{
+	height: 80%;
+	width: 30%;
+	background:  #000000;
+	color: #ffffff;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-size: 2em;
+	box-shadow: 6px 6px 10px rgba(0,0,0,1.5),-3px -3px 3px rgba(255,255,222,1.5);
+    /*flex-wrap: wrap;*/
+	transition: 3s ease;
+	cursor: pointer;
+	
+	
+}
+.graphics::before{
+	content: "PCs and servers in local networks and is commonly employed along with a mix of 10/100 Mbps devices. For example, a 10/100/1000 switch supports all three rates and adjusts to the highest speed between sender and receiver. All new computers and most network devices support Gigabit Ethernet.";
+
+}
+.net::before{
+	content: "  All new computers and most network devices support Gigabit Ethernet.";
+	
+}
+.web::before{
+	content: "PCs and servers in local networks and is commonly employed along with a mix of 10/100 Mbps devices. For example, a 10/100/1000 switch supports all three rates and adjusts to the highest speed between sender and receiver. All new computers and most network devices support Gigabit Ethernet.";
+	
+}
+.service::before{
+	/*content: "PCs and servers in local networks and is commonly employed along with a mix of 10/100 Mbps devices. For example, a 10/100/1000 switch supports all three rates and adjusts to the highest speed between sender and receiver. All new computers and most network devices support Gigabit Ethernet.";*/
+	height: 100%;
+	/*width: 100%;*/
+	background:  rgba(0,0,0,0.7);
+	transition: 3s ease;
+	font-size: 0.6em;
+	display: none;
+}   
+ .service .icon{
+ 	
+ 	height: 1em;
+ 	width: 1em;
+ 	border-radius: 50%;
+ 	border: 3px solid #e17e03;
+ 	
+ }
+ .web{
+ 	background-image: linear-gradient(rgba(0,0,0,0.573),rgba(0,0,0,0.5)),url(web.jpeg)
+ }
+ .net{
+ 	background-image: linear-gradient(rgba(0,0,0,0.573),rgba(0,0,0,0.5)),url(net.jpeg)
+ }
+ .graphics{
+ 	background-image: linear-gradient(rgba(0,0,0,0.573),rgba(0,0,0,0.5)),url(graphic.jpeg)
+ }
+ /*...........portfolio section..............*/
+ #portfolio{
+ 	height: 50vh;
+ 	width: 100%;
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: space-around;
+ 	background: #c7c7d0;
+ }
+ .item{
+ 	height: 80%;
+ 	width: 20%;
+ 	background-image: url(web.jpeg);
+ 	overflow: hidden;
+ }
+
+.item::after{
+	width: 200%;
+	height: 20%;
+	background: rgb(255,255,255);
+	content: "somthing nice ";
+	position: unset;
+	text-align: center;
+	font-size: 2em;
+	box-shadow: 6px 6px 10px rgba(0,0,0,1.5),-3px -3px 3px rgba(255,255,222,1.5);
+	transform: translateY(500px);
+}
+/*................contact us.............*/
+#contact{
+	height: 80vh;
+	width: 100vw;
+	display: flex;
+	justify-content: space-between;
+}
+.info{
+	height: 100%;
+	width: 48%;
+	background:  #c7c7d0;
+	
+}
+#contact::before{
+	height: 100%;
+	width: 100%;
+	background: red;
+	position: absolute;
+}
+.form{
+padding-left: 2em;
+padding-top: 2px;
+/*font-size: 1.5em;*/
+}
+input[type="text"],input[type="email"],select,textarea{
+	background: inherit;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	width: 25vw;
+	border-bottom: 3px solid #000000 
+	font-size:40px;
+
+}
+textarea{
+	border: 2px solid #000000;
+	width: 30vw;
+	height: 30vh;
+}
+select{
+	width: 30vw;
+}
+form{
+	padding: 2em;
+	background: #ffffff;
+	width: 80%;
+	box-shadow: 3px 3px 10px rgba(0,0,0,1.5),-3px -3px 3px rgba(255,255,222,1.5);
+
+}
+input[type="submit"]{
+	background: #0a2dcb;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+	/*box-shadow: 6px 6px 20px rgba(0,0,0,1.5),-3px -3px 3px rgba(255,255,222,1.5);*/
+	/*font-size: 1em;*/
+	padding: 10px;
+	width: 20%;
+
+}
+#btn{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 30px;
+    margin-left: 0;
+}
+#btn a,#btn p{
+	background: rgba(0,0,0,1);
+   
+border: 3px solid #e17e03;
+padding: 10px 28px;
+color: #fff;
+transition: 0.4s;
+margin: 0px 2px 0px;
+}
+
+
+
+/*...........hover............*/
+
+.graphics:hover +.graphics::before{
+	display: block;
+	transform: translateX(-190%);
+	/*width: 100%;*/
+}
+
+
+.main:hover{
+	color: #e17e03;
+	transform: scale(2,2);
+
+}
+.main:active{
+	color: #e17e03;
+	transform: scale(2,2);
+
+}
