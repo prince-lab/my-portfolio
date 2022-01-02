@@ -3,22 +3,28 @@
 	margin: 0;
 	
 }
+body{scroll-behavior: smooth;}
 nav {
 	background: black;
 	position: fixed;
 	width: 100vw;
+	top: 0;
+	z-index: 5;
 
 }
 li {
 	/*float:left;*/
 	color: white;
 	display: inline-block;
-	padding: 20px;
+	padding: 10px;
 }
 nav li a{
 	text-decoration: none;
 	color: white;
+    font-size: 1.5em;
 }
+
+
 #logo{
 	height: 30px;
 	width: 30px;
@@ -28,36 +34,51 @@ nav li a{
 	top:5px;
 }
 #bugger{
-	position: absolute;
-	top: 200px;
+	position: relative;
+	top: 220px;
+	display: none;
+}
+#bugger:checked ~  nav{
+	height: 300px;
+	background: #e17e03;
+}
+#bugger:checked ~  #bug::before{
+	transform: rotate(45deg);
+}
+#bugger:checked ~  #bug::after{
+	transform: rotate(-45deg);
+}
+#bugger:checked ~  #bug{
+	background: inherit;
 }
 #bug{
-	position: absolute;
+	position: sticky;
 	cursor: pointer;
-}
-#bug div{
-	
-	height: 3px;
+	display: block;
+	top:2500px;
+	background: #fff;
 	width: 30px;
-	background: green;
-	position: relative;
+	height: 3px;
+	z-index: 6;
 	
 }
 #bug::after{
 	content:" ";
 	height: 3px;
 	width: 30px;
-	background: green;
-	position: absolute;
-	top:10px;
+	background: #ffffff;
+	position: relative;
+	top:5px;
+	display: none;
 }
 #bug::before{
 	content:" ";
 	height: 3px;
 	width: 30px;
-	background: green;
-	position: absolute;
-	top: 20px;
+	background: #ffffff;
+	position: relative;
+	display: none;
+	top: 15px;
 	
 }
 /*........home section..........*/
@@ -100,11 +121,11 @@ center #welcome{
 }
 /*...........about us section.............*/
 #about{
-	height: 90vh;
+	height: auto;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-
+    flex-wrap: wrap;
 }
 #about img{
 	height: 50vh;
@@ -117,6 +138,10 @@ center #welcome{
 	text-align: center;
 	padding: 15px;
 
+}
+#about div{
+	height: 500px;
+	width: 500px;
 }
 #serviceh::before{
 	content: " ";
@@ -131,16 +156,17 @@ center #welcome{
 }
 
 #service{
-	height: 80vh;
+	height: auto;
 	width: 100vw;
 	display: flex;
 	align-self: stretch;
 	justify-content: space-around;
+	flex-wrap: wrap;
 
 }
 .service{
-	height: 80%;
-	width: 30%;
+	height: 300px;
+	width: 230px;
 	background:  #000000;
 	color: #ffffff;
 	display: flex;
@@ -151,11 +177,11 @@ center #welcome{
 	background-size: cover;
 	font-size: 2em;
 	box-shadow: 6px 6px 10px rgba(0,0,0,1.5),-3px -3px 3px rgba(255,255,222,1.5);
-    /*flex-wrap: wrap;*/
+    flex-wrap: wrap;
 	transition: 3s ease;
 	cursor: pointer;
 	
-	
+	margin: 20px;
 }
 .graphics::before{
 	content: "PCs and servers in local networks and is commonly employed along with a mix of 10/100 Mbps devices. For example, a 10/100/1000 switch supports all three rates and adjusts to the highest speed between sender and receiver. All new computers and most network devices support Gigabit Ethernet.";
@@ -197,30 +223,34 @@ center #welcome{
  }
  /*...........portfolio section..............*/
  #portfolio{
- 	height: 50vh;
+ 	height: auto;
  	width: 100%;
  	display: flex;
  	align-items: center;
  	justify-content: space-around;
  	background: #c7c7d0;
+ 	flex-wrap: wrap;
  }
  .item{
- 	height: 80%;
- 	width: 20%;
+ 	height: 300px;
+ 	width: 200px;
  	background-image: url(web.jpeg);
  	overflow: hidden;
+ 	margin: 20px;
+ 	border: 5px solid #ffffff;
+ 	box-shadow: 6px 6px 10px rgba(0,0,0,1.5),-3px -3px 3px rgba(255,255,222,1.5);
  }
 
 .item::after{
-	width: 200%;
+	width: 700px;
 	height: 20%;
 	background: rgb(255,255,255);
-	content: "somthing nice ";
-	position: unset;
+	content: "somthing  ";
 	text-align: center;
+	padding: 50px;
 	font-size: 2em;
 	box-shadow: 6px 6px 10px rgba(0,0,0,1.5),-3px -3px 3px rgba(255,255,222,1.5);
-	transform: translateY(500px);
+	/*transform: translateY(500px);*/
 }
 /*................contact us.............*/
 #contact{
@@ -230,17 +260,12 @@ center #welcome{
 	justify-content: space-between;
 }
 .info{
-	height: 100%;
+	height: 80%;
 	width: 48%;
-	background:  #c7c7d0;
+	/*background:  #c7c7d0;*/
 	
 }
-#contact::before{
-	height: 100%;
-	width: 100%;
-	background: red;
-	position: absolute;
-}
+
 .form{
 padding-left: 2em;
 padding-top: 2px;
@@ -276,10 +301,8 @@ input[type="submit"]{
     border: none;
     color: #ffffff;
     cursor: pointer;
-	/*box-shadow: 6px 6px 20px rgba(0,0,0,1.5),-3px -3px 3px rgba(255,255,222,1.5);*/
-	/*font-size: 1em;*/
 	padding: 10px;
-	width: 20%;
+	width: auto;
 
 }
 #btn{
@@ -288,20 +311,47 @@ input[type="submit"]{
 	align-items: center;
 	margin-top: 30px;
     margin-left: 0;
+    flex-wrap: wrap;
 }
 #btn a,#btn p{
 	background: rgba(0,0,0,1);
-   
+   margin: 5px;
 border: 3px solid #e17e03;
 padding: 10px 28px;
 color: #fff;
 transition: 0.4s;
 margin: 0px 2px 0px;
 }
+/*..........................footer section..................*/
+footer{
+	background: #000;
+	height: 50px;
+	width: 100vw;
+	color:#ffffff;
+	text-align: center;
+	z-index: 2;
+}
 
+	/*...........................social icons..................*/
+.social-media{
+	height: 30vh;
+	width: 5%;
+	background: #fff;
+	position: absolute;
+	top: 32vh;
+	margin: 0;
+	display: flex;
+	
+}
+.fab{
+	width: 240px;
+	height: 240px;
+	background: #e17e03;
+	position: relative;
+	border-radius: 50%;
+}
 
-
-/*...........hover............*/
+/*...........................hover..........................*/
 
 .graphics:hover +.graphics::before{
 	display: block;
@@ -309,14 +359,86 @@ margin: 0px 2px 0px;
 	/*width: 100%;*/
 }
 
-
 .main:hover{
 	color: #e17e03;
-	transform: scale(2,2);
+	
 
 }
-.main:active{
+.main:link{
 	color: #e17e03;
 	transform: scale(2,2);
 
 }
+ 
+
+/*.....................media queries...........................*/
+@media only screen and (max-width: 1200px) {
+	#contact{
+		flex-direction: column;
+		justify-content: center;
+		height: auto;
+		align-items: center;
+
+	}
+	.info{
+		width:60%;
+	}
+	.item{
+		font-size: 1em;
+	}
+	
+}
+@media only screen and (max-width: 600px){
+	nav{
+		display: flex;
+		flex-wrap: wrap;
+		height: 40px;
+		overflow: hidden;
+		transition: 3s ease;
+		
+	}
+	li{display: block;
+		width: 100%;
+		justify-content:center;
+		display: block;
+
+
+	}
+	#bug{
+		left: 87%;
+		top: 10px;
+		display: block;
+
+	}
+	#bug::before{
+		display: block;
+		transition: 3s ease
+	}
+	#bug::after{
+		display: block;
+		transition: 3s ease
+	}
+	li a{
+		padding-right: 70%;
+	
+	}
+
+	center #welcome{
+		margin-top:5px;
+	}
+
+	.main:hover{
+	color: #000000;
+	
+
+}
+.main:link{
+	color: #000000;
+	transform: scale(2,2);
+
+}
+}
+
+
+
+
